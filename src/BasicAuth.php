@@ -20,7 +20,7 @@ if (!defined('RAKKO_BASICAUTH_SRC')) {
  */
 final class BasicAuth implements Auth {
 
-  function __construct() {
+  public function __construct() {
   }
 
   public static function require() {

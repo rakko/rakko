@@ -56,8 +56,7 @@ final class Request {
 
       return $data;
     }
-    else {
-      false;
-    }
+
+    return false;
   }
 }

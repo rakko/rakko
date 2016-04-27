@@ -158,9 +158,9 @@ class Record {
             $stmt = self::$__CONN__->prepare($sql);
             $stmt->execute($values);
             return $stmt->fetchAll(self::FETCH_OBJ);
-        } else {
-            return self::$__CONN__->query($sql);
         }
+
+        return self::$__CONN__->query($sql);
     }
 
     /**
@@ -205,9 +205,8 @@ class Record {
             if ($result = self::$__CONN__->query($sql)) {
                 return $result->fetchColumn();
             }
-            else {
-                return 0;
-            }
+
+            return 0;
         }
 
         return self::$__CONN__->lastInsertId();

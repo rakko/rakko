@@ -30,8 +30,7 @@ class AutoLoader {
     /**
      * Register the AutoLoader on the SPL autoload stack.
      */
-    public static function register()
-    {
+    public static function register() {
         spl_autoload_register(['\Rakko\AutoLoader', 'load'], true, true);
     }
 
@@ -50,9 +49,10 @@ class AutoLoader {
     public static function addFile($class_name, $file=null) {
         if ($file == null && is_array($class_name)) {
             self::$files = array_merge(self::$files, $class_name);
-        } else {
-            self::$files[$class_name] = $file;
+            return;
         }
+
+        self::$files[$class_name] = $file;
     }
 
     /**

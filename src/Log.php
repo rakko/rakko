@@ -10,7 +10,7 @@ namespace Rakko;
 /**
  *
  */
-class Log extends AnotherClass {
+class Log {
 
   public function __construct() {
   }

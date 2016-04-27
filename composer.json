@@ -1,0 +1,16 @@
+{
+    "name": "rakko/rakko",
+    "description": "Simple framework allowing extremely easy REST API creation.",
+    "license": "MIT",
+    "require": {
+    },
+    "authors": [
+        {
+            "name": "Martijn",
+            "email": "martijn.niji@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Rakko\\": "src/"}
+    }
+}

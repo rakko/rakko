@@ -24,5 +24,4 @@ install:
   - composer install
 
 after_script:
-  - ./vendor/bin/test-reporter
   - ./vendor/bin/codacycoverage clover

@@ -3,8 +3,10 @@
     "description": "Simple framework allowing extremely easy REST API creation.",
     "license": "MIT",
     "require": {
+      "php": "^7.0"
     },
     "require-dev": {
+      "phpunit/phpunit": "^5",
       "codacy/coverage": "dev-master"
     },
     "authors": [

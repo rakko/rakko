@@ -110,9 +110,6 @@ final class Rakko {
         $requested_url = rtrim($requested_url, '/');
 
         foreach ($this->resources as $route) {// => $action) {
-            // Convert wildcards to regex
-            $action = '/bobo/mybooks/$1';
-
             $pos = strpos($route, ':');
             if ($pos !== false) {
                 $route = str_replace(':any', '([^/]+)', str_replace(':num', '([0-9]+)', str_replace(':all', '(.+)', $route)));

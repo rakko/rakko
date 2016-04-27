@@ -1,5 +1,7 @@
 <?php
 
+namespace Rakko;
+
 interface Auth {
 
 // idea for class

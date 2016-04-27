@@ -4,6 +4,9 @@
     "license": "MIT",
     "require": {
     },
+    "require-dev": {
+      "codacy/coverage": "dev-master"
+    },
     "authors": [
         {
             "name": "Martijn",

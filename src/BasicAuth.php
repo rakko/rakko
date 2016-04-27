@@ -23,6 +23,18 @@ final class BasicAuth implements Auth {
   public function __construct() {
   }
 
+  public static function authenticated(): bool {
+    return self::require();
+  }
+
+  public static function resourceAllowed($url): bool {
+    return true;
+  }
+
+  public static function verbAllowed($verb): bool {
+    return true;
+  }
+
   public static function require() {
     if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
       header('WWW-Authenticate: Basic realm="'.RAKKO_BASICAUTH_REALM.'"');

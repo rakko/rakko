@@ -95,7 +95,6 @@ class AutoLoader {
                 }
             }
         }
-        throw new \Exception("Rakko AutoLoader could not find file for '{$class_name}'.");
     }
 
 }

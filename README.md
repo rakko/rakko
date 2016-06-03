@@ -3,7 +3,8 @@ Rakko
 
 ## Goals
 
-Simple, fast, sane defaults, as automated as possible and      modules for more complex "add on" features that don't *need* to be in core.
+Simple, fast, sane defaults, as automated as possible and modules for more
+complex "add on" features that don't *need* to be in core.
 
 Nice resources:
 - http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api
@@ -11,9 +12,9 @@ Nice resources:
 
 ## Verbs allowed by framework
 
-GET, POST, PUT, DELETE & HEAD (GET minus body)
+GET, POST, PUT, DELETE, OPTIONS & HEAD (GET minus body)
 
-Maybe PATCH & OPTIONS will be added in future.
+Maybe PATCH will be added in future.
 
 ## Verbs blocked by framework
 

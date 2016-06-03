@@ -25,8 +25,8 @@ final class Request {
   }
 
   public static function verb() {
-    $allowed    = ['GET', 'POST', 'PUT', 'DELETE', 'HEAD'];
-    $disabled   = ['PATCH', 'OPTIONS'];
+    $allowed    = ['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'OPTIONS'];
+    $disabled   = ['PATCH'];
     $disallowed = ['TRACE', 'CONNECT'];
 
     $verb = $_SERVER['REQUEST_METHOD'];
@@ -37,6 +37,10 @@ final class Request {
 
     if (in_array($verb, $disabled)) {
       Response::error(501);
+    }
+
+    if ($verb === 'OPTIONS') {
+      Response::options($allowed);
     }
 
     if (in_array($verb, $allowed)) {

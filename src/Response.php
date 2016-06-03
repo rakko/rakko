@@ -40,6 +40,7 @@ class Response {
   public static function send($content = null, $type = 'json', $code = 200) {
     header('HTTP/1.1 ' . $code . ' ' . self::$ERRORS[$code]);
     header('X-Powered-By: Rakko');
+    self::cors();
 
     if ($content === null) {
       $type    = 'plain';
@@ -62,6 +63,26 @@ class Response {
     }
 
     exit();
+  }
+
+  public static function options($allowedMethods=[]) {
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'])) {
+      header("Access-Control-Allow-Methods: " . implode(', ', $allowedMethods));
+    }
+
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS'])) {
+      header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+    }
+
+    exit();
+  }
+
+  public static function cors($allowedOrigins=[], $maxAge=86400) {
+    if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowedOrigins)) {
+      header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+      header('Access-Control-Allow-Credentials: true');
+      header('Access-Control-Max-Age: '.$maxAge);
+    }
   }
 
 }
